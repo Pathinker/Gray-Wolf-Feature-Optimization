@@ -1,0 +1,36 @@
+// Read documentation or readme.md about how to run the devcontainer.
+
+{
+  "name": "GWO-Metaheuristic",
+  "image": "pathinker/tensorflow-gpu-pycuda:2.18.0",
+  "remoteUser": "root",
+  "runArgs": [
+    "-it",
+    "--gpus", "all"
+  ],
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "formulahendry.code-runner",
+              "ms-python.python",
+              "ms-python.debugpy",
+              "ms-python.vscode-pylance",
+              "ms-vscode-remote.remote-wsl"
+          ],
+          "settings": {
+            "code-runner.runInTerminal": true
+          }
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh/id_rsa,target=/home/vscode/.ssh/id_rsa,type=bind,consistency=cached"
+  ],
+  "features": {
+      "ghcr.io/devcontainers/features/git:1": {},
+      "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+        "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git"
+      }
+  },
+  "postCreateCommand": "chmod +x ./get_dataset.sh && ./get_dataset.sh"
+}

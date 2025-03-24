@@ -1,0 +1,12 @@
+__pycache__/
+dataset/
+*.pickle
+*.sav
+*keras
+*.txt
+*.csv
+
+test.py
+tempCodeRunnerFile.py
+tempCodeRunnerFile.python
+!requirements.txt

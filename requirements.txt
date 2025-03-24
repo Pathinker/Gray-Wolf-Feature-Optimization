@@ -1,0 +1,5 @@
+matplotlib==3.9.2
+matplotlib-inline==0.1.7
+numpy==1.26.4
+scikit-learn==1.5.2
+tqdm==4.66.5
