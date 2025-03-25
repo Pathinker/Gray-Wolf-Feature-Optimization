@@ -1,8 +1,8 @@
 // Read documentation or readme.md about how to run the devcontainer.
 
 {
-  "name": "GWO-Metaheuristic",
-  "image": "pathinker/tensorflow-gpu-pycuda:2.18.0",
+  "name": "gwo_feature",
+  "image": "pathinker/gray-wolf-feature-optimization:1.0",
   "remoteUser": "root",
   "runArgs": [
     "-it",

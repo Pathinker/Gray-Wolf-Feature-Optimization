@@ -103,11 +103,11 @@ Now you have two options to run the code, one being run it on the native WSL2 ub
 ### $${\color{orange}Ubuntu \space Terminal}$$
 
 <p align="justify">
-Run the next command and wait around 30 minutes to the docker image to been fully download.
+Run the next command and wait around 30 minutes for the docker image to be fully downloaded, <b>this will allow you to access the training results</b>.
 </p>
 
 ```
-docker run -it --rm --gpus all --name GWOMetaheuristic pathinker/tensorflow-gpu-pycuda:2.18.0
+docker run -it --rm --gpus all --name GWO pathinker/gray-wolf-feature-optimization:1.0
 ```
 
 The following meaning of the arguments sent are the next:

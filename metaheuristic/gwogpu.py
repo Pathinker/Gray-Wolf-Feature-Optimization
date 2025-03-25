@@ -513,7 +513,7 @@ class GWO:
 
         self.model.fit(
                        train_dataset,
-                       epochs=1,
+                       epochs=10,
                        validation_data=validation_dataset,
                        validation_freq=1,
                        class_weight = self.class_weight
