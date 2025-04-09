@@ -5,6 +5,7 @@ dataset/
 *keras
 *.txt
 *.csv
+*Zone.Identifier
 
 test.py
 tempCodeRunnerFile.py
