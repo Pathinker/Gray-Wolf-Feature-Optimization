@@ -16,6 +16,29 @@ Metaheuristic algorithms by approaching different biology or non-biology methods
 Taking notes of how Convolutional Neural Networks extract features before the result is selected by the dense layers the amount and quality of data could be compromise, by <b> adding a metaheuristic optimizations gray wolf on the final extracted features is perform a dimensionality reduction choosing the most relevant data</b>, the performance of the selected features are test on a support vector machine ensemble boosting model, this means the data flows from the input through the last convolution layer which is applied a metaheuristic algorithm and only trains with the remaining data a support vector machine, through epochs the selected features change according the fitness function considering the native loss function and the amount of features selections above the total.
 </p>
 
+https://github.com/user-attachments/assets/e8376dcf-178e-43b8-9faf-20b00298978f
+
+## Summary
+
+- Hardware Requirements
+- How to Install
+  - $${\color{orange}1.- \space Docker \space Desktop}$$
+  - $${\color{orange}2.- \space WSL2}$$
+  - $${\color{orange}3.- \space Nvidia \space Container \space Toolkit}$$
+  - $${\color{orange}4.- \space Verify \space Docker \space Installation}$$
+  - $${\color{orange}5.- \space Run \space Container \space (Choose \space Environment}$$
+      - $${\color{lightskyblue}Ubuntu \space Terminal}$$
+      - $${\color{lightskyblue}Visual \space Studio \space Code \space (DevContainer)}$$
+
+## Extra Resources
+
+- [CNN Architectures](https://github.com/Pathinker/Gray-Wolf-Feature-Optimization/tree/main/cnn)
+- [SVM Concepts](https://github.com/Pathinker/Gray-Wolf-Feature-Optimization/tree/main/boosting_ensemble)
+- [Code Documentation](https://github.com/Pathinker/Gray-Wolf-Feature-Optimization/tree/main/metaheuristic)
+
+> [!TIP]
+> Learn how to make your own virtual environments for machine or deep learning with Docker support [here](https://github.com/Pathinker/Docker-Tensorflow-WSL2).
+
 # Hardware Requirements
 
 <p align="justify">
@@ -32,29 +55,28 @@ $${\color{orange}- \space 8 \space VRAM \space Nvidia \space Graphic \space Card
 # How to Install
 
 <p align="justify">
-In order to execute and replicate the results the project was virtualized through docker being necessary only to install the tools to manage the virtual environment, also a dev container was made for visual studio code requiring less commands and a more friendly IDE to test and play on.
+In order to execute and replicate the results the project was virtualized through Docker being necessary only to install the tools to manage the virtual environment, also a dev container was made for visual studio code requiring less commands and a more friendly IDE to test and play on.
 </p>
 
-## 1.- Docker Desktop
+## $${\color{orange}1.- \space Docker \space Desktop}$$
 
 <p align="justify">
-Download and procced a to install <a href = "https://www.docker.com"> docker desktop </a> from the official website, once done enable the WSL2 connectivity currently on "<b>General</b>" and click on "<b>Use the WSL2 based engine</b>" or similar.
+Download and procced a to install <a href = "https://www.docker.com"> Docker desktop </a> from the official website, once done enable the WSL2 connectivity currently on "<b>General</b>" and click on "<b>Use the WSL2 based engine</b>" or similar.
 </p>
 
-## 2.- WSL2
+## $${\color{orange}2.- \space WSL2}$$
 
 <p align="justify">
-
 WSL2 is the windows subsystem for Linux, this will allow to integrate and use the kernel of many Linux distributions without need of virtual machine and being native on windows, to open it you must do the following path:
 </p>
 
-- Enable "**Virtual Machine Platform**" on windows features, could be found in "**Turn Windows features on or off**"
+- Enable "**Virtual Machine Platform**" and "**Windows Subsystem for Linux**" on windows features, could be found in "**Turn Windows features on or off**"
 - Open windows PowerShell as an admin, then write "**wsl --install**"
-- Write and login on Ubuntu distribution as a new user, then write "**sudo apt-get update**" to download all updates.
+- Login on Ubuntu distribution as a new user, then write "**sudo apt update && sudo apt upgrade -y**" to download all updates.
 
 More information on <a href = "https://learn.microsoft.com/en-us/windows/wsl/install"> Microsoft </a> official website.
 
-## 3.- Nvidia Container Toolkit
+## $${\color{orange}3.- \space Nvidia \space Container \space Toolkit}$$
 
 <p align="justify">
 
@@ -72,7 +94,7 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 ```
 
 ```
-sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
 
 ```
@@ -85,25 +107,25 @@ sudo apt-get install -y nvidia-container-toolkit
 
 More information on <a href = "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html"> Nvidia </a> official website.
 
-## 4.- Verify Docker Installation
+## $${\color{orange}4.- \space Verify \space Docker \space Installation}$$
 
-- Go to the ubuntu distribution download on WSL2 and type "**```docker --version```**" if everything is all right you should see the current version of docker you got on your system.
-- Run the next docker image "**```docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi```**" if you see your GPU, Drivers and Cuda version everything was installed correct.
+- Go to the Ubuntu distribution download on WSL2 and type "**```docker --version```**" if everything is all right you should see the current version of Docker you got on your system.
+- Run the next Docker image "**```docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi```**" if you see your GPU, Drivers and Cuda version everything was installed correct.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c1109a57-f7b6-4b87-98f8-50d7c4c668fe" alt="image">
 </p>
 
-## 5.- Run Container (Choose Environment)
+## $${\color{orange}5.- \space Run \space Container \space (Choose \space Environment)}$$
 
 <p align="justify">
-Now you have two options to run the code, one being run it on the native WSL2 ubuntu terminal which is already installed or add one extension on visual studio to get a more comfortable develop environment.
+Now you have two options to run the code, one being run it on the native WSL2 Ubuntu terminal which is already installed or add one extension on visual studio to get a more comfortable develop environment.
 </p>
 
-### $${\color{orange}Ubuntu \space Terminal}$$
+### $${\color{lightskyblue}Ubuntu \space Terminal}$$
 
 <p align="justify">
-Run the next command and wait around 30 minutes for the docker image to be fully downloaded, <b>this will allow you to access the training results</b>.
+Run the next command and wait around 30 minutes for the Docker image to be fully downloaded, <b>this will allow you to access the training results</b>.
 </p>
 
 ```
@@ -124,10 +146,10 @@ For now, you will need to write python3 and the complete route of files to execu
 > [!CAUTION]
 > Note: All changes made once the program is running will be lost due the missing of a volume that shares the data among the virtual environment and the host device.
 
-### $${\color{orange}Visual \space Studio \space Code}$$
+### $${\color{lightskyblue}Visual \space Studio \space Code}$$
 
 <p align="justify">
-To run it on Visual Studio Code you will need to search for extensions and type "<b><a href = "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a></b>" from Microsoft, wait until it is fully operational and then do the next shortcut "<b>Ctrl + Shift + P</b>", write and click on "<b>>Dev Containers: Rebuild and Reopen in Container</b>". Afterwards you will need to wait around the same time of the ubuntu terminal setup.
+To run it on Visual Studio Code you will need to search for extensions and type "<b><a href = "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a></b>" from Microsoft, wait until it is fully operational and then do the next shortcut "<b>Ctrl + Shift + P</b>", write and click on "<b>>Dev Containers: Rebuild and Reopen in Container</b>". Afterwards you will need to wait around the same time of the Ubuntu terminal setup.
 </p>
 
 <p align="center">
